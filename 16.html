@@ -1,0 +1,130 @@
+```html
+<html>
+
+<head>
+
+    <title>Hour Program</title>
+
+    <script language="JavaScript">
+
+        var d = new Date();
+
+        function op1(form1) {
+            d = new Date();
+            alert(d.getHours());
+        }
+
+        function op2(form1) {
+            d = new Date();
+            alert(d.getMinutes());
+        }
+
+        function op3(form1) {
+            d = new Date();
+            alert(d.getSeconds());
+        }
+
+        function op4(form1) {
+            d = new Date();
+            d.setHours(d.getHours() + 1);
+            alert(d.toLocaleTimeString());
+        }
+
+        function op5(form1) {
+            d = new Date();
+            d.setMinutes(d.getMinutes() + 1);
+            alert(d.toLocaleTimeString());
+        }
+
+        function op6(form1) {
+            d = new Date();
+            d.setSeconds(d.getSeconds() + 1);
+            alert(d.toLocaleTimeString());
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <form>
+
+        <center>
+
+            <table border="2">
+
+                <tr>
+                    <th colspan="2">time functions of Javascript</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>1. Display the hours from the time:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Hour" name="B2" onClick="op1(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>2. Display the minutes from the time:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Minutes" name="B3" onClick="op2(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>3. Display the seconds from the time:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Second" name="B4" onClick="op3(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>4. Change the hour to next hour:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Next Hour" name="B5" onClick="op4(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>5. Change the minutes to next minute:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Next Minute" name="B6" onClick="op5(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>6. Change the second to next second:</b>
+                    </td>
+
+                    <td>
+                        <input type="button" value="Next Second" name="B7" onClick="op6(form)">
+                    </td>
+                </tr>
+
+            </table>
+
+        </center>
+
+    </form>
+
+</body>
+
+</html>
+```
