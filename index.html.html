@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour Program - Code & Output</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .buttons {
+            text-align: center;
+            padding: 12px;
+            background: white;
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 9px 18px;
+            margin: 3px;
+            border: 1px solid #777;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            min-height: calc(100vh - 110px);
+        }
+
+        .panel {
+            width: 50%;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .panel-title {
+            padding: 10px 15px;
+            background: #e9e9e9;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        pre {
+            margin: 0;
+            padding: 15px;
+            height: calc(100vh - 180px);
+            overflow: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 180px);
+            border: 0;
+            background: white;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .panel {
+                width: 100%;
+            }
+
+            pre, iframe {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hour Program - JavaScript</h1>
+</header>
+
+<div class="buttons">
+    <button onclick="runProgram()">▶ Run Program</button>
+    <button onclick="resetOutput()">↻ Reset Output</button>
+</div>
+
+<div class="container">
+
+    <div class="panel">
+        <div class="panel-title">💻 My Source Code</div>
+        <pre id="sourceCode"></pre>
+    </div>
+
+    <div class="panel">
+        <div class="panel-title">▶ Program Output</div>
+        <iframe id="output"></iframe>
+    </div>
+
+</div>
+
+<script>
+const sourceCode = `<html>
+
+<head>
+    <title>Hour Program</title>
+    <script language="JavaScript">
+        var d = new Date();
+
+        function op1(form1) {
+            d = new Date();
+            alert(d.getHours());
+        }
+
+        function op2(form1) {
+            d = new Date();
+            alert(d.getMinutes());
+        }
+
+        function op3(form1) {
+            d = new Date();
+            alert(d.getSeconds());
+        }
+
+        function op4(form1) {
+            d = new Date();
+            d.setHours(d.getHours() + 1);
+            alert(d.toLocaleTimeString());
+        }
+
+        function op5(form1) {
+            d = new Date();
+            d.setMinutes(d.getMinutes() + 1);
+            alert(d.toLocaleTimeString());
+        }
+
+        function op6(form1) {
+            d = new Date();
+            d.setSeconds(d.getSeconds() + 1);
+            alert(d.toLocaleTimeString());
+        }
+    <\/script>
+</head>
+
+<body>
+    <form>
+        <center>
+            <table border="2">
+                <tr>
+                    <th colspan="2">time functions of Javascript</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>1. Display the hours from the time:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Hour" name="B2" onClick="op1(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>2. Display the minutes from the time:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Minutes" name="B3" onClick="op2(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>3. Display the seconds from the time:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Second" name="B4" onClick="op3(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>4. Change the hour to next hour:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Next Hour" name="B5" onClick="op4(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>5. Change the minutes to next minute:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Next Minute" name="B6" onClick="op5(form)">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>6. Change the second to next second:</b>
+                    </td>
+                    <td>
+                        <input type="button" value="Next Second" name="B7" onClick="op6(form)">
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </form>
+</body>
+
+</html>`;
+
+document.getElementById("sourceCode").textContent = sourceCode;
+
+function runProgram() {
+    const iframe = document.getElementById("output");
+    iframe.srcdoc = sourceCode;
+}
+
+function resetOutput() {
+    document.getElementById("output").srcdoc = "";
+    setTimeout(runProgram, 100);
+}
+
+runProgram();
+</script>
+
+</body>
+</html>
